@@ -4,8 +4,8 @@ class ExtractItemButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        style: ElevatedButton.styleFrom(shape: RoundedRectangleBorder()),
+        style: ElevatedButton.styleFrom(shape: const RoundedRectangleBorder()),
         onPressed: () {},
-        child: Icon(Icons.remove));
+        child: const Icon(Icons.remove));
   }
 }

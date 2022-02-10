@@ -3,26 +3,11 @@ import 'package:flutter/rendering.dart';
 import 'package:ice_cream_ui_clone/model/ice_cream.dart';
 import 'package:ice_cream_ui_clone/screns/detail_screen.dart';
 
+import '../utils/constants.dart';
 import 'add_item_button.dart';
 
 class TopFlavoursList extends StatelessWidget {
-  late Card mycard;
-/*   final String id;
-  final String title;
-  final double kilos;
-  final double review;
-  final double price;
-  final String imageUrl;
-
-  const IceCreamList(
-      {Key? key,
-      required this.id,
-      required this.title,
-      required this.kilos,
-      required this.review,
-      required this.price,
-      required this.imageUrl})
-      : super(key: key); */
+  // late Card mycard;
 
   @override
   Widget build(BuildContext context) {
@@ -43,26 +28,24 @@ class TopFlavoursList extends StatelessWidget {
                               )));
                 },
                 child: Card(
-                  color: Colors.pink[100],
-                  // margin: EdgeInsets.all(16),
+                  color: myLightPinkColor,
                   child: Padding(
-                      padding: EdgeInsets.all(8),
+                      padding: EdgeInsets.all(lowPadding),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Image.network(
                             cart[i].imageUrl,
-                            height: 100,
-                            width: 100,
+                            height: midImageHeight,
+                            width: midImageWidht,
                           ),
                           Column(
-                            //   mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text(cart[i].title!,
                                   style: Theme.of(context).textTheme.headline5),
                               SizedBox(
-                                height: 8,
+                                height: lowPadding,
                               ),
                               Row(
                                 children: [
@@ -71,11 +54,11 @@ class TopFlavoursList extends StatelessWidget {
                                           .textTheme
                                           .headline6),
                                   SizedBox(
-                                    width: 50,
+                                    width: lowImageWidht,
                                   ),
                                   Icon(
                                     Icons.star,
-                                    color: Colors.yellow,
+                                    color: myYellowColor,
                                   ),
                                   Text(cart[i].review.toString(),
                                       style:
@@ -83,18 +66,16 @@ class TopFlavoursList extends StatelessWidget {
                                 ],
                               ),
                               Row(
-                                /*  mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween, */
                                 children: [
                                   Text("\$${cart[i].price.toString()}",
                                       style: Theme.of(context)
                                           .textTheme
                                           .headline5),
                                   SizedBox(
-                                    width: 50,
+                                    width: lowImageWidht,
                                   ),
                                   AddItemButton(
-                                    buttonShape: CircleBorder(),
+                                    buttonShape: const CircleBorder(),
                                   )
                                 ],
                               )

@@ -26,7 +26,7 @@ class IceCream {
 }
 
 class Products {
-  List<IceCream> _items = [
+  final List<IceCream> _items = [
     IceCream(
       id: 'p1',
       title: 'Vanilla Ice Cream',

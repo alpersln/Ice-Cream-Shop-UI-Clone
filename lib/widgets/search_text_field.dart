@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utils/constants.dart';
+
 class SearchTextField extends StatelessWidget {
   const SearchTextField({Key? key}) : super(key: key);
 
@@ -7,16 +9,16 @@ class SearchTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
-          fillColor: Colors.grey[200],
+          fillColor: textFieldFillColor,
           filled: true,
           border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
               borderSide: BorderSide.none),
-          prefixIcon: Icon(Icons.search),
-          hintText: "Search",
+          prefixIcon: const Icon(Icons.search),
+          hintText: texFieldHintText,
           suffixIcon: ElevatedButton(
             onPressed: () {},
-            child: Icon(Icons.sync_alt),
+            child: const Icon(Icons.sync_alt),
           )),
     );
   }

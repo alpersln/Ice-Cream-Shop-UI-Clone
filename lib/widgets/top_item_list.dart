@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../model/ice_cream.dart';
 import '../screns/detail_screen.dart';
+import '../utils/constants.dart';
 import 'add_item_button.dart';
 
 class TopItemList extends StatelessWidget {
@@ -26,15 +27,15 @@ class TopItemList extends StatelessWidget {
                               )));
                 },
                 child: Card(
-                  color: (i % 2 == 0) ? Colors.blue[100] : Colors.pink[100],
+                  color: (i % 2 == 0) ? myLightBlueColor : myLightPinkColor,
                   child: Padding(
-                    padding: EdgeInsets.all(8),
+                    padding: EdgeInsets.all(lowPadding),
                     child: Column(
                       children: [
                         Image.network(
                           cart[i].imageUrl,
-                          height: 100,
-                          width: 100,
+                          height: midImageHeight,
+                          width: midImageWidht,
                         ),
                         Text(cart[i].title!,
                             style: Theme.of(context).textTheme.headline5),
@@ -45,10 +46,10 @@ class TopItemList extends StatelessWidget {
                             Text("\$${cart[i].price.toString()}",
                                 style: Theme.of(context).textTheme.headline5),
                             SizedBox(
-                              width: 50,
+                              width: lowImageWidht,
                             ),
                             AddItemButton(
-                              buttonShape: CircleBorder(),
+                              buttonShape: const CircleBorder(),
                             )
                           ],
                         )

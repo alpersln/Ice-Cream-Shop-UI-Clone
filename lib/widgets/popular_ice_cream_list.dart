@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../model/ice_cream.dart';
 import '../screns/detail_screen.dart';
+import '../utils/constants.dart';
 
 class PopularIceCreamList extends StatelessWidget {
   const PopularIceCreamList({Key? key}) : super(key: key);
@@ -25,19 +26,19 @@ class PopularIceCreamList extends StatelessWidget {
                               )));
                 },
                 child: Card(
-                  color: (i % 2 == 0) ? Colors.yellow[100] : Colors.blue[100],
+                  color: (i % 2 == 0) ? myLightYellowColor : myLightBlueColor,
                   child: Padding(
-                    padding: EdgeInsets.all(8),
+                    padding: EdgeInsets.all(lowPadding),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          color: (i % 2 == 0) ? Colors.yellow : Colors.blue,
+                          color: (i % 2 == 0) ? myYellowColor : myBlueColor,
                           child: Image.network(
                             cart[i].imageUrl,
-                            height: 50,
-                            width: 50,
+                            height: lowImageHeight,
+                            width: lowImageWidht,
                           ),
                         ),
                         Text(cart[i].shortTitle!,

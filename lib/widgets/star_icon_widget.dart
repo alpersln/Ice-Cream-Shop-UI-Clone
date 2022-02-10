@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ice_cream_ui_clone/utils/constants.dart';
 
 class StarIconWidget extends StatelessWidget {
   final int total;
@@ -13,7 +14,7 @@ class StarIconWidget extends StatelessWidget {
         var filled = index < activated;
         return Icon(
           filled ? Icons.star : Icons.star_border,
-          color: Colors.yellow,
+          color: myYellowColor,
         );
       }).toList(),
     );

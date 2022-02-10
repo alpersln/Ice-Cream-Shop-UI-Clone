@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'screns/home_page.dart';
+import 'utils/constants.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,15 +16,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: 'Gorgita',
-        textTheme: const TextTheme(
-            bodyText2: TextStyle(color: Colors.black54),
-            headline2: TextStyle(color: Colors.amber)),
+        fontFamily: myFontFamily,
+        textTheme:
+            const TextTheme(bodyText2: myBodyText2, headline2: myHeadline2),
         appBarTheme: const AppBarTheme(
-            iconTheme: IconThemeData(color: Color.fromARGB(255, 211, 159, 177)),
-            backgroundColor: Colors.transparent,
+            iconTheme: myAppBarIconTheme,
+            backgroundColor: myAppBarBackgroundColor,
             elevation: 0),
-        primarySwatch: Colors.pink,
+        primarySwatch: myPrimarySwatch,
       ),
       home: const HomePage(),
     );

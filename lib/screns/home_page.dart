@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ice_cream_ui_clone/model/ice_cream.dart';
 import 'package:ice_cream_ui_clone/widgets/top_flavours_list.dart';
 
+import '../utils/constants.dart';
 import '../widgets/popular_ice_cream_list.dart';
 import '../widgets/search_text_field.dart';
 import '../widgets/top_item_list.dart';
@@ -20,7 +22,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(),
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 16),
+          padding: EdgeInsets.symmetric(horizontal: mediumPadding),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -31,11 +33,11 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Hey Emma",
+                        greetingUser,
                         style: Theme.of(context).textTheme.headline4!.copyWith(
                             fontWeight: FontWeight.normal, color: Colors.black),
                       ),
-                      const SizedBox(height: 8),
+                      SizedBox(height: lowPadding),
                       Text(
                         "What flavor do you like to eat?",
                         style: Theme.of(context).textTheme.bodyText2,
@@ -43,26 +45,25 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                   const CircleAvatar(
-                    backgroundImage: NetworkImage(
-                        "https://thumbs.dreamstime.com/b/charming-happy-asian-female-white-t-shrit-smiling-satisfied-clapping-hands-congratulate-person-win-praising-good-work-well-193061246.jpg"),
+                    backgroundImage: NetworkImage(avatarNetworkImage),
                     radius: 24,
                   )
                 ],
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: mediumPadding),
               SearchTextField(),
-              const SizedBox(height: 16),
-              Text("Top Flavours",
+              SizedBox(height: mediumPadding),
+              Text(topFlavoursString,
                   style: Theme.of(context).textTheme.headline5),
-              const SizedBox(height: 16),
+              SizedBox(height: mediumPadding),
               if (!isKeyboard) TopFlavoursList(),
-              const SizedBox(height: 16),
-              Text("Popular Ice Cream",
+              SizedBox(height: mediumPadding),
+              Text(popularIceCreamString,
                   style: Theme.of(context).textTheme.headline5),
               PopularIceCreamList(),
-              const SizedBox(height: 16),
-              Text("Top Item", style: Theme.of(context).textTheme.headline5),
-              if (!isKeyboard) TopItemList(),
+              SizedBox(height: 16),
+              Text(topItemString, style: Theme.of(context).textTheme.headline5),
+              if (!isKeyboard) const TopItemList(),
             ],
           ),
         ),

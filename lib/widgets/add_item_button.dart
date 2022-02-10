@@ -10,6 +10,6 @@ class AddItemButton extends StatelessWidget {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(shape: buttonShape),
         onPressed: () {},
-        child: Icon(Icons.add));
+        child: const Icon(Icons.add));
   }
 }
