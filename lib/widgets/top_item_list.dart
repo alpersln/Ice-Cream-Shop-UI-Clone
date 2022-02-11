@@ -30,30 +30,32 @@ class TopItemList extends StatelessWidget {
                   color: (i % 2 == 0) ? myLightBlueColor : myLightPinkColor,
                   child: Padding(
                     padding: EdgeInsets.all(lowPadding),
-                    child: Column(
-                      children: [
-                        Image.network(
-                          cart[i].imageUrl,
-                          height: midImageHeight,
-                          width: midImageWidht,
-                        ),
-                        Text(cart[i].title!,
-                            style: Theme.of(context).textTheme.headline5),
-                        Text(cart[i].description!,
-                            style: Theme.of(context).textTheme.bodyText2),
-                        Row(
-                          children: [
-                            Text("\$${cart[i].price.toString()}",
-                                style: Theme.of(context).textTheme.headline5),
-                            SizedBox(
-                              width: lowImageWidht,
-                            ),
-                            AddItemButton(
-                              buttonShape: const CircleBorder(),
-                            )
-                          ],
-                        )
-                      ],
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          Image.network(
+                            cart[i].imageUrl,
+                            height: midImageHeight,
+                            width: midImageWidht,
+                          ),
+                          Text(cart[i].title!,
+                              style: Theme.of(context).textTheme.headline5),
+                          Text(cart[i].description!,
+                              style: Theme.of(context).textTheme.bodyText2),
+                          Row(
+                            children: [
+                              Text("\$${cart[i].price.toString()}",
+                                  style: Theme.of(context).textTheme.headline5),
+                              SizedBox(
+                                width: lowImageWidht,
+                              ),
+                              AddItemButton(
+                                buttonShape: const CircleBorder(),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),

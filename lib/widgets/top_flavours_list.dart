@@ -7,8 +7,6 @@ import '../utils/constants.dart';
 import 'add_item_button.dart';
 
 class TopFlavoursList extends StatelessWidget {
-  // late Card mycard;
-
   @override
   Widget build(BuildContext context) {
     final cart = Products().items;
@@ -40,46 +38,50 @@ class TopFlavoursList extends StatelessWidget {
                             height: midImageHeight,
                             width: midImageWidht,
                           ),
-                          Column(
-                            children: [
-                              Text(cart[i].title!,
-                                  style: Theme.of(context).textTheme.headline5),
-                              SizedBox(
-                                height: lowPadding,
-                              ),
-                              Row(
-                                children: [
-                                  Text("${cart[i].kilos.toString()} KG",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .headline6),
-                                  SizedBox(
-                                    width: lowImageWidht,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                    color: myYellowColor,
-                                  ),
-                                  Text(cart[i].review.toString(),
-                                      style:
-                                          Theme.of(context).textTheme.headline6)
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Text("\$${cart[i].price.toString()}",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .headline5),
-                                  SizedBox(
-                                    width: lowImageWidht,
-                                  ),
-                                  AddItemButton(
-                                    buttonShape: const CircleBorder(),
-                                  )
-                                ],
-                              )
-                            ],
+                          SingleChildScrollView(
+                            child: Column(
+                              children: [
+                                Text(cart[i].title!,
+                                    style:
+                                        Theme.of(context).textTheme.headline5),
+                                SizedBox(
+                                  height: lowPadding,
+                                ),
+                                Row(
+                                  children: [
+                                    Text("${cart[i].kilos.toString()} KG",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline6),
+                                    SizedBox(
+                                      width: lowImageWidht,
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: myYellowColor,
+                                    ),
+                                    Text(cart[i].review.toString(),
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline6)
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    Text("\$${cart[i].price.toString()}",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline5),
+                                    SizedBox(
+                                      width: lowImageWidht,
+                                    ),
+                                    AddItemButton(
+                                      buttonShape: const CircleBorder(),
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
                           )
                         ],
                       )),

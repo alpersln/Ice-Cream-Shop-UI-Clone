@@ -13,10 +13,12 @@ const myAppBarBackgroundColor = Colors.transparent;
 
 //HomePage constants
 double lowPadding = 8;
+double upperLowPadding = 12;
 double mediumPadding = 16;
 double upperMediumPadding = 24;
 double highPaddig = 32;
-const greetingUser = 'Hey Emma';
+const greetingUserString = 'Hey Emma';
+const attractiveString = "What flavor do you like to eat?";
 const avatarNetworkImage =
     "https://thumbs.dreamstime.com/b/charming-happy-asian-female-white-t-shrit-smiling-satisfied-clapping-hands-congratulate-person-win-praising-good-work-well-193061246.jpg";
 
@@ -42,6 +44,3 @@ double midImageWidht = 100;
 //SearchTextField.dart
 const textFieldFillColor = Color.fromARGB(255, 235, 232, 232);
 const texFieldHintText = 'Search';
-
-
-//TopFlavoursList.dart

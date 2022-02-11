@@ -20,53 +20,42 @@ class _HomePageState extends State<HomePage> {
     final isKeyboard = MediaQuery.of(context).viewInsets.bottom != 0;
     return Scaffold(
       appBar: AppBar(),
-      body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: mediumPadding),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        greetingUser,
-                        style: Theme.of(context).textTheme.headline4!.copyWith(
-                            fontWeight: FontWeight.normal, color: Colors.black),
-                      ),
-                      SizedBox(height: lowPadding),
-                      Text(
-                        "What flavor do you like to eat?",
-                        style: Theme.of(context).textTheme.bodyText2,
-                      )
-                    ],
-                  ),
-                  const CircleAvatar(
-                    backgroundImage: NetworkImage(avatarNetworkImage),
-                    radius: 24,
-                  )
-                ],
+              Text(
+                greetingUserString,
+                style: Theme.of(context).textTheme.headline4!.copyWith(
+                    fontWeight: FontWeight.normal, color: Colors.black),
               ),
-              SizedBox(height: mediumPadding),
-              SearchTextField(),
-              SizedBox(height: mediumPadding),
-              Text(topFlavoursString,
-                  style: Theme.of(context).textTheme.headline5),
-              SizedBox(height: mediumPadding),
-              if (!isKeyboard) TopFlavoursList(),
-              SizedBox(height: mediumPadding),
-              Text(popularIceCreamString,
-                  style: Theme.of(context).textTheme.headline5),
-              PopularIceCreamList(),
-              SizedBox(height: 16),
-              Text(topItemString, style: Theme.of(context).textTheme.headline5),
-              if (!isKeyboard) const TopItemList(),
+              const CircleAvatar(
+                backgroundImage: NetworkImage(avatarNetworkImage),
+                radius: 24,
+              )
             ],
           ),
-        ),
+          SizedBox(height: lowPadding),
+          Text(
+            attractiveString,
+            style: Theme.of(context).textTheme.bodyText2,
+          ),
+          SizedBox(height: mediumPadding),
+          const SearchTextField(),
+          SizedBox(height: mediumPadding),
+          Text(topFlavoursString, style: Theme.of(context).textTheme.headline5),
+          SizedBox(height: mediumPadding),
+          TopFlavoursList(),
+          SizedBox(height: mediumPadding),
+          Text(popularIceCreamString,
+              style: Theme.of(context).textTheme.headline5),
+          const PopularIceCreamList(),
+          SizedBox(height: mediumPadding),
+          Text(topItemString, style: Theme.of(context).textTheme.headline5),
+          const TopItemList(),
+        ],
       ),
     );
   }
